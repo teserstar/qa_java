@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="ru.yandex.practicum.tests.CatTest" time="0.008" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="ru.yandex.practicum.tests.CatTest" time="0.012" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.2"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -64,6 +64,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ru.yandex.practicum.tests.CatTest" name="getFoodReturnsCorrectMethod" time="0.008"/>
+  <testcase classname="ru.yandex.practicum.tests.CatTest" name="getFoodReturnsCorrectMethod" time="0.012"/>
   <testcase classname="ru.yandex.practicum.tests.CatTest" name="getSoundReturnsCorrectValue" time="0"/>
 </testsuite>
