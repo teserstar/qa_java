@@ -1,15 +1,31 @@
 package ru.yandex.practicum.tests;
 
+import com.example.Cat;
 import com.example.Feline;
 import com.example.Lion;
 import com.example.Predator;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(MockitoJUnitRunner.class)
 public class LionTest {
+
+    @Mock
+    Feline feline;
+
+    @Test
+    public void getKittensStubReturnsCorrectValue() throws Exception {
+        Lion lion = new Lion(feline, "Самец");
+        Mockito.when(feline.getKittens()).thenReturn(2);
+        assertEquals("A lion should have as many kittens as a feline",2, lion.getKittens());
+    }
 
     @Test
     public void lionConstructorThrowsException() {
