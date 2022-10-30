@@ -1,10 +1,11 @@
 package ru.yandex.practicum.tests;
 
-import com.example.Cat;
 import com.example.Feline;
 import com.example.Lion;
 import com.example.Predator;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -27,16 +28,15 @@ public class LionTest {
         assertEquals("A lion should have as many kittens as a feline",2, lion.getKittens());
     }
 
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
     @Test
-    public void lionConstructorThrowsException() {
-        Exception expectedException = new Exception("Используйте допустимые значения пола животного - самец или самка");
-        try {
-            Predator predator = new Feline();
-            new Lion(predator, "Мясо");
-        } catch (Exception actualException) {
-            assertEquals("The exception message should show how to choose the sex of the lion",
-                    expectedException.getMessage(), actualException.getMessage());
-        }
+    public void lionConstructorThrowsException() throws Exception {
+        thrown.expect(Exception.class);
+        thrown.expectMessage("Используйте допустимые значения пола животного - самец или самка");
+        Predator predator = new Feline();
+        new Lion(predator, "Мясо");
     }
 
     @Test
